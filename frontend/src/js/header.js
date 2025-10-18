@@ -1,13 +1,17 @@
+import $ from 'jquery';
+
+console.log("loaded");
+
+// jQuery/ESM でのナビ制御（存在時のみ動作）
 $(function () {
-// ハンバーガーメニューのボタンがクリックされたときの処理
- $('.hamburger').click(function () {
+  $('.hamburger').on('click', function () {
     $(this).toggleClass('active');
     $('#header .nav').toggleClass('active');
-});
+  });
 
-//メニュー内のリンクがクリックされた時
-  $('.nav a').click(function () {
+  $('#header .nav a').on('click', function () {
     $('.hamburger').removeClass('active');
     $('#header .nav').removeClass('active');
   });
 });
+
